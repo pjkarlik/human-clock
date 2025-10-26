@@ -1,0 +1,88 @@
+body {
+  background: #111;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  animation: stripe-animation 8s linear infinite;
+}
+
+body.dark {
+  background-image: linear-gradient(
+    135deg,
+    #151515 12.5%,
+    #111 12.5%,
+    #111 50%,
+    #151515 50%,
+    #151515 62.5%,
+    #111 62.5%,
+    #111 100%
+  );
+  background-size: 56.57px 56.57px;
+}
+
+@keyframes stripe-animation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 113.14px 113.14px;
+  }
+}
+
+.digit,
+.sprite {
+  width: 160px;
+  height: 240px;
+  background-repeat: no-repeat;
+  //image-rendering: pixelated;
+}
+
+.ampm {
+  margin-top: 3rem;
+  margin-right: 1rem;
+  width: 80px;
+  height: 120px;
+  overflow:hidden;
+  margin:5rem 0 0 3rem;
+}
+
+.colon {
+  color: #fff;
+  font-size: 8em;
+  margin-right:1rem;
+}
+
+.clock {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  width:100vw;
+  padding: 5rem 0;
+  background:#111;
+  border-top:10px solid #151515;
+  border-bottom:10px solid #151515;
+}
+
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: sans-serif;
+  color: white;
+  font-size: 20px;
+}
+
+.preload {
+  display: block;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
