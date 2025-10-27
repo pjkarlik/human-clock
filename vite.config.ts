@@ -9,7 +9,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, "index.html"),
-        //original: resolve(__dirname, "original.html"),
+        jack: resolve(__dirname, "jack.html"),
       },
     },
   },

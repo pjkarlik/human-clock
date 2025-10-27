@@ -6,7 +6,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  animation: stripe-animation 8s linear infinite;
 }
 
 body.dark {
@@ -21,8 +20,41 @@ body.dark {
     #111 100%
   );
   background-size: 56.57px 56.57px;
+  animation: stripe-animation 8s linear infinite;
 }
 
+
+body.jack {
+  background-image: linear-gradient(
+    135deg,
+    #75633a 16.67%,
+    #655531 16.67%,
+    #655531 25%,
+    #75633a 25%,
+    #75633a 41.67%,
+    #7d6d44 41.67%,
+    #7d6d44 50%,
+    #75633a 50%,
+    #75633a 66.67%,
+    #655531 66.67%,
+    #655531 75%,
+    #75633a 75%,
+    #75633a 91.67%,
+    #7d6d44 91.67%,
+    #7d6d44 100%
+  );
+  background-size: 84.85px 84.85px;
+  animation: jack-animation 8s linear infinite;
+}
+
+@keyframes jack-animation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 84.85px 84.85px;
+  }
+}
 @keyframes stripe-animation {
   from {
     background-position: 0 0;
@@ -68,7 +100,11 @@ body.dark {
   border-top:10px solid #151515;
   border-bottom:10px solid #151515;
 }
-
+.jack .clock {
+  background: #6a5a36;
+  border-top: 5px solid #ecaf25;
+  border-bottom: 5px solid #ecaf25;
+}
 
 .loading {
   position: fixed;
