@@ -1,5 +1,5 @@
 import "./styles.scss";
-import { charSheet, ampmSheet } from "./theme-jack";
+import { charSheet, ampmSheet } from "./theme-plastic";
 import { SpriteAnimator } from './sprite-animator';
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -7,9 +7,9 @@ window.addEventListener("DOMContentLoaded", async () => {
   clock.classList.add('clock');
   document.body.appendChild(clock);
 
-  const digitA = new SpriteAnimator(clock, charSheet, 160, 240, 5, 24, 40, 20);
+  const digitA = new SpriteAnimator(clock, charSheet, 160, 240, 5, 24, 40, 15);
   digitA.start(); 
-  const digitB = new SpriteAnimator(clock, charSheet, 160, 240, 5, 24, 40, 20);
+  const digitB = new SpriteAnimator(clock, charSheet, 160, 240, 5, 24, 40, 15);
   digitB.start(); 
 
   const colon = document.createElement("div");
@@ -17,12 +17,12 @@ window.addEventListener("DOMContentLoaded", async () => {
   colon.classList.add("colon");
   clock.appendChild(colon);
 
-  const digitC = new SpriteAnimator(clock, charSheet, 160, 240, 5, 24, 40, 20);
+  const digitC = new SpriteAnimator(clock, charSheet, 160, 240, 5, 24, 40, 15);
   digitC.start(); 
-  const digitD = new SpriteAnimator(clock, charSheet, 160, 240, 5, 24, 40, 20);
+  const digitD = new SpriteAnimator(clock, charSheet, 160, 240, 5, 24, 40, 15);
   digitD.start(); 
 
-  const ampm = new SpriteAnimator(clock, ampmSheet, 80, 120, 5, 24, 8, 20, 121, 'ampm');
+  const ampm = new SpriteAnimator(clock, ampmSheet, 80, 120, 5, 24, 8, 15, 121, 'ampm');
   ampm.start(); 
 
   let counter = 0;

@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         index: resolve(__dirname, "index.html"),
         jack: resolve(__dirname, "jack.html"),
+        plastic: resolve(__dirname, "plastic.html"),
       },
     },
   },
