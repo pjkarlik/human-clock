@@ -40,8 +40,8 @@ export class SpriteAnimator {
 
   // timing + chance constants
   private readonly HOLD_FRAME = 61;
-  private readonly INTERM_PROBABILITY = 0.3;
-  private readonly SKIP_PROBABILITY = 0.3;
+  private readonly INTERM_PROBABILITY = 0.38;
+  private readonly SKIP_PROBABILITY = 0.32;
 
   constructor(
     parentEl: HTMLElement,

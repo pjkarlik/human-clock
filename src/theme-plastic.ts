@@ -179,7 +179,7 @@ export const charSheet: Sheet[] = [
   },
   {
     name: "interm 5",
-    url: "./img/plastic/interm/interm-05-sprite.gif",
+    url: "./img/plastic/interm/interm-08-sprite.gif",
   },
   {
     name: "interm 6",
@@ -191,7 +191,7 @@ export const charSheet: Sheet[] = [
   },
   {
     name: "interm 8",
-    url: "./img/plastic/interm/interm-08-sprite.gif",
+    url: "./img/plastic/interm/interm-05-sprite.gif",
   },
   {
     name: "interm 9",
@@ -281,7 +281,7 @@ export const ampmSheet: Sheet[] = [
   },
   {
     name: "interm 5",
-    url: "./img/plastic/interm/ampm-05-sprite.gif",
+    url: "./img/plastic/interm/ampm-08-sprite.gif",
   },
   {
     name: "interm 6",
@@ -293,7 +293,7 @@ export const ampmSheet: Sheet[] = [
   },
   {
     name: "interm 8",
-    url: "./img/plastic/interm/ampm-08-sprite.gif",
+    url: "./img/plastic/interm/ampm-05-sprite.gif",
   },
   {
     name: "interm 9",

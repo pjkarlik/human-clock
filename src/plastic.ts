@@ -59,5 +59,5 @@ window.addEventListener("DOMContentLoaded", async () => {
   await updateTime();
 
   // Then update every x seconds
-  setInterval(updateTime, 5000);
+  setInterval(updateTime, 4000);
 });
