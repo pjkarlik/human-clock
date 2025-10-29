@@ -120,8 +120,7 @@ export class SpriteAnimator {
           this.preloadElement.remove();
         }
       };
-      // optional: comment out if you don’t want these in the DOM
-      this.preloadElement.appendChild(img);
+      //this.preloadElement.appendChild(img);
     });
 
     this.preloadCache.set(sheet.url, promise);
@@ -135,10 +134,10 @@ export class SpriteAnimator {
     this.currentFrame = 0;
   }
 
-  private resetState() {
-    this.isTransitioning = false;
-    this.isIntermPlaying = false;
-  }
+  // private resetState() {
+  //   this.isTransitioning = false;
+  //   this.isIntermPlaying = false;
+  // }
 
   private async setNextDigit(index?: number) {
     const nextIndex = index ?? this.getRandomVariantIndex(this.currentDigit);
