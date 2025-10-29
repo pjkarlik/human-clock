@@ -2,7 +2,35 @@ import "./styles.scss";
 import { charSheet, ampmSheet } from "./theme-plastic";
 import { SpriteAnimator } from './sprite-animator';
 
+
+const makeButton = (path, content) => {
+  const liEl = document.createElement("li");
+  const button = document.createElement("a");
+  button.innerHTML = content;
+  button.addEventListener(
+    "click",
+    () => {
+      window.location = path;
+    },
+    false
+  );
+  liEl.appendChild(button);
+  return liEl;
+};
 window.addEventListener("DOMContentLoaded", async () => {
+  const clocks = document.createElement("ul");
+  clocks.classList.add("selector");
+
+  const ck1 = makeButton("./","a");
+  const ck2 = makeButton("./plastic","b");
+  const ck3 = makeButton("./jack","c");
+
+  clocks.appendChild(ck1);
+  clocks.appendChild(ck2);
+  clocks.appendChild(ck3);
+
+  document.body.appendChild(clocks);
+
   const clock = document.createElement("div");
   clock.classList.add('clock');
   document.body.appendChild(clock);

@@ -23,7 +23,6 @@ body.dark {
   animation: stripe-animation 8s linear infinite;
 }
 
-
 body.jack {
   background-image: linear-gradient(
     135deg,
@@ -77,16 +76,61 @@ body.jack {
   margin-right: 1rem;
   width: 80px;
   height: 120px;
-  overflow:hidden;
-  margin:5rem 0 0 3rem;
+  overflow: hidden;
+  margin: 5rem 0 0 3rem;
 }
 
 .colon {
   color: #fff;
   font-size: 8em;
-  margin-right:1rem;
+  margin-right: 1rem;
+}
+.selector {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  & li {
+    list-style-type: none;
+    & a {
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-size: 14px;
+      color: #e28915;
+      padding: 0.25rem 0.5rem;
+      margin-block-start: 1rem;
+      text-decoration: none;
+
+      border: 4px solid #333;
+      background: #151515;
+      border-radius: 0.5rem;
+
+      flex: 1 1 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        background: #444;
+      }
+    }
+  }
 }
 
+.jack .selector a {
+  background:#655531;
+  color: #ecaf25;
+  border: 4px solid #ecaf25;
+  &:hover {
+    background: #bea15e;
+  }
+}
 .clock {
   display: flex;
 
@@ -94,11 +138,11 @@ body.jack {
   align-items: center;
   flex-direction: row;
 
-  width:100vw;
+  width: 100vw;
   padding: 5rem 0;
-  background:#111;
-  border-top:10px solid #151515;
-  border-bottom:10px solid #151515;
+  background: #111;
+  border-top: 10px solid #151515;
+  border-bottom: 10px solid #151515;
 }
 .jack .clock {
   background: #6a5a36;

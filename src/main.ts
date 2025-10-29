@@ -1,16 +1,43 @@
 import "./styles.scss";
 import { charSheet, ampmSheet } from "./theme-dark";
-import { SpriteAnimator } from './sprite-animator';
+import { SpriteAnimator } from "./sprite-animator";
 
+const makeButton = (path, content) => {
+  const liEl = document.createElement("li");
+  const button = document.createElement("a");
+  button.innerHTML = content;
+  button.addEventListener(
+    "click",
+    () => {
+      window.location = path;
+    },
+    false
+  );
+  liEl.appendChild(button);
+  return liEl;
+};
 window.addEventListener("DOMContentLoaded", async () => {
+  const clocks = document.createElement("ul");
+  clocks.classList.add("selector");
+
+  const ck1 = makeButton("./","a");
+  const ck2 = makeButton("./plastic","b");
+  const ck3 = makeButton("./jack","c");
+
+  clocks.appendChild(ck1);
+  clocks.appendChild(ck2);
+  clocks.appendChild(ck3);
+
+  document.body.appendChild(clocks);
+
   const clock = document.createElement("div");
-  clock.classList.add('clock');
+  clock.classList.add("clock");
   document.body.appendChild(clock);
 
   const digitA = new SpriteAnimator(clock, charSheet, 160, 240, 5, 24, 40, 22);
-  digitA.start(); 
+  digitA.start();
   const digitB = new SpriteAnimator(clock, charSheet, 160, 240, 5, 24, 40, 22);
-  digitB.start(); 
+  digitB.start();
 
   const colon = document.createElement("div");
   colon.textContent = ":";
@@ -18,12 +45,23 @@ window.addEventListener("DOMContentLoaded", async () => {
   clock.appendChild(colon);
 
   const digitC = new SpriteAnimator(clock, charSheet, 160, 240, 5, 24, 40, 22);
-  digitC.start(); 
+  digitC.start();
   const digitD = new SpriteAnimator(clock, charSheet, 160, 240, 5, 24, 40, 22);
-  digitD.start(); 
+  digitD.start();
 
-  const ampm = new SpriteAnimator(clock, ampmSheet, 80, 120, 5, 24, 8, 8, 121, 'ampm');
-  ampm.start(); 
+  const ampm = new SpriteAnimator(
+    clock,
+    ampmSheet,
+    80,
+    120,
+    5,
+    24,
+    8,
+    8,
+    121,
+    "ampm"
+  );
+  ampm.start();
 
   let counter = 0;
   // Helper function to update all digits to the current time
@@ -37,11 +75,10 @@ window.addEventListener("DOMContentLoaded", async () => {
     const mStr = minutes.toString().padStart(2, "0");
     const timeStr = hStr + mStr;
 
-
-    if(isPM && counter == 4){
-        ampm.incrementDigit(1);
-    }else if (counter == 4){
-        ampm.incrementDigit(0);
+    if (isPM && counter == 4) {
+      ampm.incrementDigit(1);
+    } else if (counter == 4) {
+      ampm.incrementDigit(0);
     }
 
     timeStr.split("").forEach((num, i) => {
