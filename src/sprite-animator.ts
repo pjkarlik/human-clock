@@ -89,8 +89,6 @@ export class SpriteAnimator {
     this.preload(this.getRandomIntermIndex());
   }
 
-  // --- Utility helpers ---
-
   private getRandomVariantIndex(digit: number): number {
     const base = digit * this.DIGIT_VARIANTS;
     const offset = Math.floor(Math.random() * this.DIGIT_VARIANTS);
@@ -145,8 +143,6 @@ export class SpriteAnimator {
     this.setSpriteSheet(nextIndex);
     this.preload(this.getRandomVariantIndex((this.currentDigit + 1) % this.mods));
   }
-
-  // --- Main animation loop ---
 
   private updateSprite() {
     const frameIndex = this.currentFrame;
@@ -209,8 +205,6 @@ export class SpriteAnimator {
     await this.setNextDigit();
   }
 
-  // --- Public API ---
-
   public async incrementDigit(targetDigit: number) {
     targetDigit = targetDigit % this.mods;
     if (this.targetDigit === targetDigit && Math.random() > this.SKIP_PROBABILITY) {
@@ -230,7 +224,6 @@ export class SpriteAnimator {
     }
   }
 
-  // optional: requestAnimationFrame-based loop (smoother)
   private loop = (timestamp: number) => {
     if (timestamp - this.lastFrameTime > 1000 / this.fps) {
       this.updateSprite();
